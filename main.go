@@ -1,15 +1,12 @@
 package main
 
 import (
-	// "fmt"
-	"github.com/garyburd/redigo/redis"
-	"github.com/namsral/flag"
-	"log"
-	// "sync"
 	"bytes"
 	"encoding/json"
 	"github.com/ashwanthkumar/slack-go-webhook"
-	// "github.com/lucaslsl/goexeccmd/slack"
+	"github.com/garyburd/redigo/redis"
+	"github.com/namsral/flag"
+	"log"
 	"net"
 	"os/exec"
 	"strings"
