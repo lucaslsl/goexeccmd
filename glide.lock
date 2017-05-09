@@ -1,0 +1,23 @@
+hash: eddf4be43739046dc9cd6ccc886e048573ea24ed370160d48e5377eeeebe7d38
+updated: 2017-05-09T02:04:16.717165107-03:00
+imports:
+- name: github.com/ashwanthkumar/slack-go-webhook
+  version: fe52e9bf2b376c1d74222c8deabda62fe3f29ed3
+- name: github.com/garyburd/redigo
+  version: 8873b2f1995f59d4bcdd2b0dc9858e2cb9bf0c13
+  subpackages:
+  - internal
+  - redis
+- name: github.com/moul/http2curl
+  version: 4e24498b31dba4683efb9d35c1c8a91e2eda28c8
+- name: github.com/namsral/flag
+  version: 71ceffbeb0ba60fccc853971bb3ed4d7d90bfd04
+- name: github.com/parnurzeal/gorequest
+  version: a578a48e8d6ca8b01a3b18314c43c6716bb5f5a3
+- name: github.com/pkg/errors
+  version: c605e284fe17294bda444b34710735b29d1a9d90
+- name: golang.org/x/net
+  version: feeb485667d1fdabe727840fe00adc22431bc86e
+  subpackages:
+  - publicsuffix
+testImports: []

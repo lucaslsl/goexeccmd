@@ -1,0 +1,11 @@
+package: github.com/lucaslsl/goexeccmd
+import:
+- package: github.com/garyburd/redigo
+  version: ^1.0.0
+  subpackages:
+  - redis
+- package: github.com/namsral/flag
+  version: ^1.7.4-alpha
+- package: github.com/parnurzeal/gorequest
+  version: ^0.2.15
+- package: github.com/ashwanthkumar/slack-go-webhook
