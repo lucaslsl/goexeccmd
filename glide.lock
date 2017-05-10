@@ -1,5 +1,5 @@
 hash: eddf4be43739046dc9cd6ccc886e048573ea24ed370160d48e5377eeeebe7d38
-updated: 2017-05-09T02:04:16.717165107-03:00
+updated: 2017-05-10T01:07:34.178937613-03:00
 imports:
 - name: github.com/ashwanthkumar/slack-go-webhook
   version: fe52e9bf2b376c1d74222c8deabda62fe3f29ed3
@@ -17,7 +17,7 @@ imports:
 - name: github.com/pkg/errors
   version: c605e284fe17294bda444b34710735b29d1a9d90
 - name: golang.org/x/net
-  version: feeb485667d1fdabe727840fe00adc22431bc86e
+  version: c9b681d35165f1995d6f3034e61f8761d4b90c99
   subpackages:
   - publicsuffix
 testImports: []

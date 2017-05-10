@@ -1,4 +1,4 @@
-package: github.com/lucaslsl/goexeccmd
+package: github.com/lucaslsl/goexeccmds-daemon
 import:
 - package: github.com/garyburd/redigo
   version: ^1.0.0
