@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	redisAddr       = flag.String("redis_address", "localhost:6379", "Redis Address")
+	redisURL        = flag.String("redis_url", "redis://localhost:6379", "Redis URL")
 	redisChannel    = flag.String("redis_channel", "cmds_tasks", "Tasks Channel")
 	slackWebhookURL = flag.String("slack_webhook_url", "", "Slack Webhook URL")
 	serverID        = flag.String("server_id", getOutboundIP(), "Server ID")
@@ -79,7 +79,7 @@ func runOnThisServer(t Task) bool {
 
 func reconnectAndSubscribe() {
 	for {
-		newConn, err := redis.Dial("tcp", *redisAddr)
+		newConn, err := redis.DialURL(*redisURL)
 		if err == nil {
 			go sendSlackNotification("redis connection reestablished! waiting for tasks in channel *" + *redisChannel + "*")
 			pubSubConn = &redis.PubSubConn{Conn: newConn}
@@ -144,7 +144,7 @@ func init() {
 }
 
 func main() {
-	redisConn, err := redis.Dial("tcp", *redisAddr)
+	redisConn, err := redis.DialURL(*redisURL)
 	if err != nil {
 		panic(err)
 	}
