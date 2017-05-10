@@ -29,6 +29,7 @@ type TaskInstruction struct {
 }
 
 type Task struct {
+	ID           string            `json:"id"`
 	Name         string            `json:"name"`
 	Instructions []TaskInstruction `json:"instructions"`
 	ServersIDs   []string          `json:"servers_ids"`
