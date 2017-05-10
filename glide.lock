@@ -1,5 +1,5 @@
-hash: eddf4be43739046dc9cd6ccc886e048573ea24ed370160d48e5377eeeebe7d38
-updated: 2017-05-10T01:07:34.178937613-03:00
+hash: 9922958c25a74cba10f96e208d664fb0f5bcd499d6a61aa4b99d3f2ac81fe1af
+updated: 2017-05-10T01:15:59.063519347-03:00
 imports:
 - name: github.com/ashwanthkumar/slack-go-webhook
   version: fe52e9bf2b376c1d74222c8deabda62fe3f29ed3
