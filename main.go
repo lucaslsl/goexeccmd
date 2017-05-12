@@ -77,11 +77,11 @@ func runOnThisServer(t Task) bool {
 	return serverIDAllowed(t) && serverRoleAllowed(t)
 }
 
-func reconnectAndSubscribe() {
+func connectAndSubscribe() {
 	for {
 		newConn, err := redis.DialURL(*redisURL)
 		if err == nil {
-			go sendSlackNotification("redis connection reestablished! waiting for tasks in channel *" + *redisChannel + "*")
+			go sendSlackNotification("redis connection established! waiting for tasks in channel *" + *redisChannel + "*")
 			pubSubConn = &redis.PubSubConn{Conn: newConn}
 			pubSubConn.Subscribe(*redisChannel)
 			return
@@ -134,7 +134,7 @@ func waitForTasks() {
 
 		case error:
 			go sendSlackNotification("redis connection failed!")
-			reconnectAndSubscribe()
+			connectAndSubscribe()
 		}
 	}
 }
@@ -144,14 +144,9 @@ func init() {
 }
 
 func main() {
-	redisConn, err := redis.DialURL(*redisURL)
-	if err != nil {
-		panic(err)
-	}
-	defer redisConn.Close()
-	pubSubConn = &redis.PubSubConn{Conn: redisConn}
-	pubSubConn.Subscribe(*redisChannel)
-	go sendSlackNotification("redis connection established! waiting for tasks in channel *" + *redisChannel + "*")
+
+	connectAndSubscribe()
+
 	defer pubSubConn.Close()
 
 	waitForTasks()
